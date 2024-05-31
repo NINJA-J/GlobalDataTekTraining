@@ -1,3 +1,5 @@
+package assignment2;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -49,11 +51,11 @@ public class TodoManagerV2 {
         while (isContinue) {
             System.out.println("===============================");
             System.out.println("==     Todo Manager Menu     ==");
-            System.out.println("== 1. Add Task               ==");
-            System.out.println("== 2. Delete Task            ==");
-            System.out.println("== 3. Update Task            ==");
-            System.out.println("== 4. Search Task            ==");
-            System.out.println("== 5. Print Task             ==");
+            System.out.println("== 1. Add assignment3.Task               ==");
+            System.out.println("== 2. Delete assignment3.Task            ==");
+            System.out.println("== 3. Update assignment3.Task            ==");
+            System.out.println("== 4. Search assignment3.Task            ==");
+            System.out.println("== 5. Print assignment3.Task             ==");
             System.out.println("== 0. Exit                   ==");
             System.out.println("===============================");
             System.out.print("Selection: ");
@@ -70,22 +72,22 @@ public class TodoManagerV2 {
             }
             switch (opt) {
                 case 1:
-                    System.out.print("Task Name: ");
+                    System.out.print("assignment3.Task Name: ");
                     addTask(scanner.next());
                     break;
                 case 2:
-                    System.out.print("Task Name: ");
+                    System.out.print("assignment3.Task Name: ");
                     delTask(scanner.next());
                     break;
                 case 3:
-                    System.out.print("Old Task Name: ");
+                    System.out.print("Old assignment3.Task Name: ");
                     String old = scanner.next();
-                    System.out.print("New Task Name: ");
+                    System.out.print("New assignment3.Task Name: ");
                     String newName = scanner.next();
                     updateTask(old, newName);
                     break;
                 case 4:
-                    System.out.print("Task Name:");
+                    System.out.print("assignment3.Task Name:");
                     findTasks(scanner.next());
                     break;
                 case 5:

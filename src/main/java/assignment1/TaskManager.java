@@ -1,3 +1,5 @@
+package assignment1;
+
 import java.util.*;
 
 public class TaskManager {
@@ -25,12 +27,12 @@ public class TaskManager {
     }
 
     public void printRepeatedTasks() {
-        System.out.println("Task repeat information:");
+        System.out.println("assignment3.Task repeat information:");
         for (Map.Entry<String, Integer> e: cnt.entrySet()) {
             if (e.getValue() == 1) {
-                System.out.println("    Task " + e.getKey() + " has no repeated tasks");
+                System.out.println("    assignment3.Task " + e.getKey() + " has no repeated tasks");
             } else {
-                System.out.println("    Task " + e.getKey() + " repeated " + e.getValue() + " times");
+                System.out.println("    assignment3.Task " + e.getKey() + " repeated " + e.getValue() + " times");
             }
         }
     }

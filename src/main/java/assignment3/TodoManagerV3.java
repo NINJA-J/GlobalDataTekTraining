@@ -1,3 +1,5 @@
+package assignment3;
+
 import java.util.Scanner;
 
 public class TodoManagerV3 {
@@ -10,28 +12,28 @@ public class TodoManagerV3 {
     }
 
     public void addTask() {
-        System.out.print("Task Title: ");
+        System.out.print("assignment3.Task Title: ");
         String title = scanner.next();
-        System.out.print("Task Text: ");
+        System.out.print("assignment3.Task Text: ");
         String text = scanner.next();
         dao.addTask(title, text);
     }
 
     public void delTask() {
-        System.out.print("Task Title: ");
+        System.out.print("assignment3.Task Title: ");
         if (dao.delTask(scanner.next())) {
             System.out.println("Delete successful");
         } else {
-            System.out.println("Task not found");
+            System.out.println("assignment3.Task not found");
         }
     }
 
     public void updateTask() {
-        System.out.print("Task Title: ");
+        System.out.print("assignment3.Task Title: ");
         String title = scanner.next();
         Task task = dao.getTask(title);
         if (task == null) {
-            System.out.println("Task " + title + " not found");
+            System.out.println("assignment3.Task " + title + " not found");
             return;
         }
         System.out.print("Update Title? Y/N: ");
@@ -48,25 +50,25 @@ public class TodoManagerV3 {
     }
 
     public void findTasks() {
-        System.out.print("Task Title: ");
+        System.out.print("assignment3.Task Title: ");
         String title = scanner.next();
         Task task = dao.getTask(title);
         if (task == null) {
-            System.out.println("Task " + title + " not found");
+            System.out.println("assignment3.Task " + title + " not found");
             return;
         }
-        System.out.println("Task ID          : " + task.getTaskId());
-        System.out.println("  Task Title     : " + task.getTaskTitle());
-        System.out.println("  Task Text      : " + task.getTaskText());
-        System.out.println("  Task Assignment: " + task.getAssignedTo());
+        System.out.println("assignment3.Task ID          : " + task.getTaskId());
+        System.out.println("  assignment3.Task Title     : " + task.getTaskTitle());
+        System.out.println("  assignment3.Task Text      : " + task.getTaskText());
+        System.out.println("  assignment3.Task Assignment: " + task.getAssignedTo());
     }
 
     public void assignTask() {
-        System.out.print("Task Title: ");
+        System.out.print("assignment3.Task Title: ");
         String title = scanner.next();
         Task task = dao.getTask(title);
         if (task == null) {
-            System.out.println("Task " + title + " not found");
+            System.out.println("assignment3.Task " + title + " not found");
             return;
         }
         System.out.print("Assign To: ");
@@ -75,10 +77,10 @@ public class TodoManagerV3 {
 
     public void showTasks() {
         for (Task t : dao.getTasks()) {
-            System.out.println("Task ID          : " + t.getTaskId());
-            System.out.println("  Task Title     : " + t.getTaskTitle());
-            System.out.println("  Task Text      : " + t.getTaskText());
-            System.out.println("  Task Assignment: " + t.getAssignedTo());
+            System.out.println("assignment3.Task ID          : " + t.getTaskId());
+            System.out.println("  assignment3.Task Title     : " + t.getTaskTitle());
+            System.out.println("  assignment3.Task Text      : " + t.getTaskText());
+            System.out.println("  assignment3.Task Assignment: " + t.getAssignedTo());
 
         }
     }
@@ -88,12 +90,12 @@ public class TodoManagerV3 {
         while (isContinue) {
             System.out.println("===============================");
             System.out.println("==     Todo Manager Menu     ==");
-            System.out.println("== 1. Add Task               ==");
-            System.out.println("== 2. Delete Task            ==");
-            System.out.println("== 3. Update Task            ==");
-            System.out.println("== 4. Search Task            ==");
-            System.out.println("== 5. Print Task             ==");
-            System.out.println("== 6. Assign Task            ==");
+            System.out.println("== 1. Add assignment3.Task               ==");
+            System.out.println("== 2. Delete assignment3.Task            ==");
+            System.out.println("== 3. Update assignment3.Task            ==");
+            System.out.println("== 4. Search assignment3.Task            ==");
+            System.out.println("== 5. Print assignment3.Task             ==");
+            System.out.println("== 6. Assign assignment3.Task            ==");
             System.out.println("== 0. Exit                   ==");
             System.out.println("===============================");
             System.out.print("Selection: ");
