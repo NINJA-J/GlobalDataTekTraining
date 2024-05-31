@@ -15,8 +15,8 @@ public class TodoManagerDao {
         tasks.add(task);
     }
 
-    public void delTask(String taskTitle) {
-        tasks.removeIf(t -> taskTitle.equals(t.getTaskTitle()));
+    public boolean delTask(String taskTitle) {
+        return tasks.removeIf(t -> taskTitle.equals(t.getTaskTitle()));
     }
 
     public Task getTask(String taskTitle) {

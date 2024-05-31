@@ -13,13 +13,17 @@ public class TodoManagerV3 {
         System.out.print("Task Title: ");
         String title = scanner.next();
         System.out.print("Task Text: ");
-        String text = scanner.nextLine();
+        String text = scanner.next();
         dao.addTask(title, text);
     }
 
     public void delTask() {
         System.out.print("Task Title: ");
-        dao.delTask(scanner.next());
+        if (dao.delTask(scanner.next())) {
+            System.out.println("Delete successful");
+        } else {
+            System.out.println("Task not found");
+        }
     }
 
     public void updateTask() {
@@ -27,19 +31,19 @@ public class TodoManagerV3 {
         String title = scanner.next();
         Task task = dao.getTask(title);
         if (task == null) {
-            System.out.println("Task " + title + " doesn't not exist");
+            System.out.println("Task " + title + " not found");
             return;
         }
         System.out.print("Update Title? Y/N: ");
         if (scanner.next().equals("Y")) {
             System.out.print("New Title: ");
-            task.setTaskTitle(scanner.nextLine());
+            task.setTaskTitle(scanner.next());
         }
 
         System.out.print("Update Text? Y/N: ");
         if (scanner.next().equals("Y")) {
             System.out.print("New Text: ");
-            task.setTaskText(scanner.nextLine());
+            task.setTaskText(scanner.next());
         }
     }
 
@@ -48,13 +52,13 @@ public class TodoManagerV3 {
         String title = scanner.next();
         Task task = dao.getTask(title);
         if (task == null) {
-            System.out.println("Task " + title + " doesn't not exist");
+            System.out.println("Task " + title + " not found");
             return;
         }
-        System.out.println("Task ID        : " + task.getTaskId());
-        System.out.println("Task Title     : " + task.getTaskTitle());
-        System.out.println("Task Text      : " + task.getTaskText());
-        System.out.println("Task Assignment: " + task.getAssignedTo());
+        System.out.println("Task ID          : " + task.getTaskId());
+        System.out.println("  Task Title     : " + task.getTaskTitle());
+        System.out.println("  Task Text      : " + task.getTaskText());
+        System.out.println("  Task Assignment: " + task.getAssignedTo());
     }
 
     public void assignTask() {
@@ -62,19 +66,19 @@ public class TodoManagerV3 {
         String title = scanner.next();
         Task task = dao.getTask(title);
         if (task == null) {
-            System.out.println("Task " + title + " doesn't not exist");
+            System.out.println("Task " + title + " not found");
             return;
         }
         System.out.print("Assign To: ");
-        task.setAssignedTo(scanner.nextLine());
+        task.setAssignedTo(scanner.next());
     }
 
     public void showTasks() {
         for (Task t : dao.getTasks()) {
-            System.out.println("Task ID        : " + t.getTaskId());
-            System.out.println("Task Title     : " + t.getTaskTitle());
-            System.out.println("Task Text      : " + t.getTaskText());
-            System.out.println("Task Assignment: " + t.getAssignedTo());
+            System.out.println("Task ID          : " + t.getTaskId());
+            System.out.println("  Task Title     : " + t.getTaskTitle());
+            System.out.println("  Task Text      : " + t.getTaskText());
+            System.out.println("  Task Assignment: " + t.getAssignedTo());
 
         }
     }
@@ -89,7 +93,7 @@ public class TodoManagerV3 {
             System.out.println("== 3. Update Task            ==");
             System.out.println("== 4. Search Task            ==");
             System.out.println("== 5. Print Task             ==");
-            System.out.println("== 5. Assign Task            ==");
+            System.out.println("== 6. Assign Task            ==");
             System.out.println("== 0. Exit                   ==");
             System.out.println("===============================");
             System.out.print("Selection: ");
@@ -102,6 +106,7 @@ public class TodoManagerV3 {
                 }
             } catch (Exception e) {
                 System.out.println("Invalid selection");
+                scanner.next();
                 continue;
             }
             switch (opt) {
