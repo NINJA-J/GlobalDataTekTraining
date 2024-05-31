@@ -24,9 +24,10 @@ public class TodoManagerV3 {
 
     public void updateTask() {
         System.out.print("Task Title: ");
-        Task task = dao.getTask(scanner.next());
+        String title = scanner.next();
+        Task task = dao.getTask(title);
         if (task == null) {
-            System.out.println("Task " + task + " doesn't not exist");
+            System.out.println("Task " + title + " doesn't not exist");
             return;
         }
         System.out.print("Update Title? Y/N: ");
@@ -44,9 +45,10 @@ public class TodoManagerV3 {
 
     public void findTasks() {
         System.out.print("Task Title: ");
-        Task task = dao.getTask(scanner.next());
+        String title = scanner.next();
+        Task task = dao.getTask(title);
         if (task == null) {
-            System.out.println("Task " + task + " doesn't not exist");
+            System.out.println("Task " + title + " doesn't not exist");
             return;
         }
         System.out.println("Task ID        : " + task.getTaskId());
@@ -57,9 +59,10 @@ public class TodoManagerV3 {
 
     public void assignTask() {
         System.out.print("Task Title: ");
-        Task task = dao.getTask(scanner.next());
+        String title = scanner.next();
+        Task task = dao.getTask(title);
         if (task == null) {
-            System.out.println("Task " + task + " doesn't not exist");
+            System.out.println("Task " + title + " doesn't not exist");
             return;
         }
         System.out.print("Assign To: ");
